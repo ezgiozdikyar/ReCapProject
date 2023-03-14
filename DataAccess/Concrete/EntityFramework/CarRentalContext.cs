@@ -8,7 +8,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=DESKTOP-08QVV4V\SQLEXPRESS;Database=CarRental;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True");
+            optionsBuilder.UseSqlServer(@"");
         }
         public DbSet<Car> Cars { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
