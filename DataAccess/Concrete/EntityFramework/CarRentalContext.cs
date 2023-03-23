@@ -11,6 +11,8 @@ namespace DataAccess.Concrete.EntityFramework
             optionsBuilder.UseSqlServer(@"");
         }
         public DbSet<Car> Cars { get; set; }
+        public DbSet<Color> Colors { get; set; }
+        public DbSet<Brand> Brands { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CarMap());
