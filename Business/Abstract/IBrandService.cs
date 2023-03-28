@@ -1,9 +1,14 @@
-﻿using Entities.Concrete;
+﻿using Core.Utilities;
+using Entities.Concrete;
 
 namespace Business.Abstract
 {
     public interface IBrandService
     {
-        List<Brand> GetAll();
+        IDataResult<Brand> GetBrand(int id);
+        IDataResult<List<Brand>> GetAll();
+        IResult DeleteBrand(Brand brand);
+        IResult UpdateBrand(Brand brand);
+        IResult AddBrand(Brand brand);
     }
 }
