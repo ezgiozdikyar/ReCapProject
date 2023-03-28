@@ -4,9 +4,15 @@ using DataAccess.Concrete.EntityFramework;
 
 CarManager carManager = new CarManager(new EfCarDal());
 
-
-foreach (var car in carManager.GetCarDetails())
+var result= carManager.GetCarDetails();
+if (result.Success)
 {
-    Console.WriteLine(car.CarName + " - " + car.BrandName + " - " + car.ColorName + " - " + car.DailyPrice + " TL");
+    foreach (var car in result.Data)
+    {
+        Console.WriteLine(car.CarName + " - " + car.BrandName + " - " + car.ColorName + " - " + car.DailyPrice + " TL");
+    }
 }
-
+else
+{
+    Console.WriteLine(result.Message);
+}
