@@ -13,8 +13,8 @@ namespace Entities.Mapping
             builder.Property(c => c.DailyPrice).IsRequired(true);
             builder.Property(c => c.ModelYear).IsRequired(true);
             builder.Property(p => p.DailyPrice).HasPrecision(10, 2);
-            builder.HasOne<Brand>().WithMany(b => b.Cars).HasForeignKey(c => c.BrandId);
-            builder.HasOne<Color>().WithMany(c => c.Cars).HasForeignKey(c => c.ColorId);
+            builder.HasOne<Brand>().WithMany().HasForeignKey(c => c.BrandId);
+            builder.HasOne<Color>().WithMany().HasForeignKey(c => c.ColorId);
             builder.ToTable("Cars");
         }
       

@@ -16,8 +16,8 @@ namespace Entities.Mapping
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Id).ValueGeneratedOnAdd();
-            builder.HasOne(c => c.User).WithMany().HasForeignKey(c => c.UserId);
             builder.Property(c => c.CompanyName).IsRequired(true);
+            builder.HasOne<User>().WithOne().HasForeignKey<Customer>(c => c.UserId);
         }
     }
 }
