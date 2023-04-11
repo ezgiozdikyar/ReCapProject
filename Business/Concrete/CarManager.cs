@@ -1,5 +1,7 @@
 ﻿using Business.Abstract;
 using Business.Constants;
+using Business.ValidationRules.FluentValidation;
+using Core.Aspects.Autofac.Validation;
 using Core.Utilities;
 using DataAccess.Abstract;
 using Entities.Concrete;
@@ -15,6 +17,7 @@ namespace Business.Concrete
             _carDal = carDal;
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult AddCar(Car car)
         {
             _carDal.Add(car);
@@ -56,6 +59,7 @@ namespace Business.Concrete
             return new SuccessDataResult<List<Car>>(_carDal.GetAll(c => c.ColorId == id));
         }
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult UpdateCar(Car car)
         {
             _carDal.Update(car);
