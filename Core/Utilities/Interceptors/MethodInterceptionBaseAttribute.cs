@@ -1,6 +1,6 @@
 ﻿using Castle.DynamicProxy;
 
-namespace Core.Interceptors
+namespace Core.Utilities.Interceptors
 {
     // Create attribute for classes and methods.
 

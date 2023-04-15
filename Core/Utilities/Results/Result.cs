@@ -1,4 +1,4 @@
-﻿namespace Core.Utilities
+﻿namespace Core.Utilities.Results
 {
     //For void functions
     public class Result : IResult
@@ -7,13 +7,13 @@
 
         public string Message { get; }
 
-        public Result(bool success,string message):this(success)
+        public Result(bool success, string message) : this(success)
         {
             Message = message;
         }
         public Result(bool success)
         {
-            Success = success;   
+            Success = success;
         }
     }
 }

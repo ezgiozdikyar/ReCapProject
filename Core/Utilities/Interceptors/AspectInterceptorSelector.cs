@@ -1,7 +1,7 @@
 ﻿using Castle.DynamicProxy;
 using System.Reflection;
 
-namespace Core.Interceptors
+namespace Core.Utilities.Interceptors
 {
     //Read class and method attributes and add them to list based on their priority.
     public class AspectInterceptorSelector : IInterceptorSelector
